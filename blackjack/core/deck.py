@@ -17,7 +17,3 @@ class Baralho:
     def shuffle(self):
         random.shuffle(self.baralho)
 
-    
-baralho = Baralho()
-print(len(baralho.baralho))
-print(baralho.baralho)
