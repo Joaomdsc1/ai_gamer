@@ -61,3 +61,15 @@ class Game():
             ases -= 1
         
         return total
+    
+    def vencedor(self, ponto_jogador, ponto_dealer):
+        if ponto_jogador > 21:
+            return "Dealer"
+        elif ponto_dealer > 21:
+            return "Jogador"
+        elif ponto_jogador > ponto_dealer:
+            return "Jogador"
+        elif ponto_dealer == ponto_jogador:
+            return "Empate"
+        else:
+            return "Dealer"
