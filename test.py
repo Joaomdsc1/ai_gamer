@@ -1,5 +1,7 @@
-a = [1,2,3]
-b = a
-b += [4]
+def fat(x):
+    if x == 1:
+        return 1
+    else:
+        return x * fat(x-1)
 
-print(a)
+print(fat(9))
