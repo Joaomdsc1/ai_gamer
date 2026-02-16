@@ -1,8 +1,13 @@
-x = int(input("digite o numero que será calculado o fatorial: "))
-fat = x
-for i in range(x - 1):
-    fat = fat * (x - 1)
-    x -= 1
+# # # somar os itens de um array utilizando recursão
 
-print(fat)
+lista = [1,2,3,4,10]
+soma = 0
+def somar_lista(lista, soma):
+    x = lista.pop(-1)
+    soma += x
+    return soma
+i = 0
+while i < len(lista):
+    soma = somar_lista(lista, soma)
 
+print(soma)
