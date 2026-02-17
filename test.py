@@ -1,18 +1,19 @@
-# # # Quicksort
+# # # hashmap
 
-import random
+caderno = dict()
 
-numeros = random.sample(range(1, 101), 10)
+caderno['maça'] = 0.50
+caderno['pera'] = 0.70
+print(caderno)
+caderno['abacaxi'] = 10.50
+caderno['maça'] = 1.50
+print(caderno)
 
-def quicksort(array):
-    if len(array) < 2:
-        return array
+def verifica(nome):
+    if caderno.get(nome):
+        print("Ta tendo !!")
     else:
-        pivo = array[0]
-        menores = [i for i in array[1:] if i <= pivo]
-        maiores = [i for i in array[1:] if i > pivo]
-        return quicksort(menores) + [pivo] + quicksort(maiores)
-    
-print(numeros)
-print("\n")
-print(quicksort(numeros))
+        print('Tem mas acabou //:')
+
+verifica('maça')
+verifica('uva')
