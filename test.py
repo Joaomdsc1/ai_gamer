@@ -1,22 +1,18 @@
-# # # Função para contar os itens de uma lista
+# # # Quicksort
 
-lista = [1, 4, 6, 7]
+import random
 
-def contagem(lista):
-    contador = 0
-    for item in lista:
-        contador += 1
-    return contador
+numeros = random.sample(range(1, 101), 10)
 
-def maior(lista):
-    valor = lista[0]
-    for i in range(len(lista)):
-        if valor < lista[i]:
-            valor = lista[i]
-        else:
-            continue
-    return valor
-
-
-print(contagem(lista))
-print(maior(lista))
+def quicksort(array):
+    if len(array) < 2:
+        return array
+    else:
+        pivo = array[0]
+        menores = [i for i in array[1:] if i <= pivo]
+        maiores = [i for i in array[1:] if i > pivo]
+        return quicksort(menores) + [pivo] + quicksort(maiores)
+    
+print(numeros)
+print("\n")
+print(quicksort(numeros))
