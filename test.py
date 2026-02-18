@@ -1,8 +1,19 @@
-x = int(input("digite o numero que será calculado o fatorial: "))
-fat = x
-for i in range(x - 1):
-    fat = fat * (x - 1)
-    x -= 1
+# # # hashmap
 
-print(fat)
+caderno = dict()
 
+caderno['maça'] = 0.50
+caderno['pera'] = 0.70
+print(caderno)
+caderno['abacaxi'] = 10.50
+caderno['maça'] = 1.50
+print(caderno)
+
+def verifica(nome):
+    if caderno.get(nome):
+        print("Ta tendo !!")
+    else:
+        print('Tem mas acabou //:')
+
+verifica('maça')
+verifica('uva')
