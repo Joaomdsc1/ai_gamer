@@ -76,6 +76,13 @@ def main():
         else:
             print(f"Estamos empatados em {vitorias_mesa} a {vitorias_jogador}")
 
+        print("\n", len(baralho))
+
+        if len(baralho) > 0.5 * 52:
+            baralho = Baralho()
+        else:
+            continue
+
         replay = input("\nJogar novamente? (s ou n)\n")
         if replay == 's':
             continue

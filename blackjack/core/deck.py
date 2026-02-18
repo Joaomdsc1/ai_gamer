@@ -8,7 +8,6 @@ class Baralho:
         self.criar_baralho()
         self.shuffle()
 
-
     def criar_baralho(self):
         for i in self.valores:
             for j in self.naipes:
@@ -17,3 +16,5 @@ class Baralho:
     def shuffle(self):
         random.shuffle(self.baralho)
 
+    def __len__(self):
+        return len(self.baralho)
