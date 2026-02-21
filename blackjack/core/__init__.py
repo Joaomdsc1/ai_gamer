@@ -11,11 +11,11 @@ def main():
     vitorias_mesa = 0
 
     while jogar == True:
-        if len(baralho) < 0.5 * 52:
-            print("Reiniciando o Baralho")
+        if len(baralho) < 0.5 * baralho.num_decks * 52:
+            print("\n ============ Reiniciando o Baralho ============ \n")
             baralho.baralho = Baralho().baralho
             baralho.shuffle()
-            
+
         print("Distribuindo cartas...")
         dealer, jogador = jogo.distribuir_cartas()
 
