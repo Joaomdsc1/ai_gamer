@@ -5,12 +5,17 @@ from time import sleep
 def main():
     print("=== BlackJack ===\n")
     baralho = Baralho()
-    jogo = Game()
+    jogo = Game(baralho)
     jogar = True
     vitorias_jogador = 0
     vitorias_mesa = 0
 
     while jogar == True:
+        if len(baralho) < 0.5 * 52:
+            print("Reiniciando o Baralho")
+            baralho.baralho = Baralho().baralho
+            baralho.shuffle()
+            
         print("Distribuindo cartas...")
         dealer, jogador = jogo.distribuir_cartas()
 
@@ -60,7 +65,10 @@ def main():
             print("\nA mesa estourou")
 
         vencedor = jogo.vencedor(pontos_jogador, pontos_dealer)
-        print(f"\nO vencedor foi o {vencedor}\n")
+        if vencedor == "Empate":
+            print("A mão empatou")
+        else:
+            print(f"\nO vencedor foi o {vencedor}\n")
 
         if vencedor == "Jogador":
             vitorias_jogador += 1
@@ -76,18 +84,14 @@ def main():
         else:
             print(f"Estamos empatados em {vitorias_mesa} a {vitorias_jogador}")
 
-        print("\n", len(baralho))
-
-        if len(baralho) > 0.5 * 52:
-            baralho = Baralho()
-        else:
-            continue
+        print("\nO baralho ainda tem ", len(baralho), " cartas.")
 
         replay = input("\nJogar novamente? (s ou n)\n")
         if replay == 's':
             continue
         else:
             jogar = False
+
 
 if __name__ == "__main__":
     main()

@@ -2,8 +2,8 @@ from deck import Baralho
 
 class Game():
     
-    def __init__(self):
-        self.baralho = Baralho()
+    def __init__(self, baralho: Baralho):
+        self.baralho = baralho
 
     def distribuir_cartas(self):
         mao_dealer = []
